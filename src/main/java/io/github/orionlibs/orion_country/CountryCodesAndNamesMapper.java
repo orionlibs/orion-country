@@ -7,6 +7,7 @@ import java.util.concurrent.ConcurrentMap;
 public class CountryCodesAndNamesMapper
 {
     public static final ConcurrentMap<String, String> mapper = new ConcurrentHashMap<>();
+
     static
     {
         mapper.put("AFG", "Afghanistan");
@@ -260,20 +261,15 @@ public class CountryCodesAndNamesMapper
         mapper.put("ZWE", "Zimbabwe");
     }
 
-
     public static String getCountryCodeFromName(String countryName)
     {
-
         for(Map.Entry<String, String> countryCodeToName : mapper.entrySet())
         {
-
             if(countryCodeToName.getValue().equals(countryName))
             {
                 return countryCodeToName.getKey();
             }
-
         }
-
         return null;
     }
 }
